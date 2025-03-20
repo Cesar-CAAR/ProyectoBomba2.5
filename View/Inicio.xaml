@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoBomba.View.Inicio"
+             Title="Inicio"
+             BackgroundColor="#18A4D0">
+
+    <ContentPage.Content>
+        <VerticalStackLayout>
+            <Label Text="Inicio"
+             FontSize="30"
+             Margin="0,15,0,0"
+             FontAttributes="Bold"
+             TextColor="Black"
+             HorizontalTextAlignment="Center"/>
+
+            <FlexLayout Margin="23,40,0,0">
+
+                <VerticalStackLayout>
+                    <Label Text="Bomba de agua"
+                     FontSize="19"
+                     FontAttributes="Bold"/>
+                </VerticalStackLayout>
+
+                <Label Text="Tiempo restante"
+                 FontSize="19"
+                 FontAttributes="Bold"
+                 Margin="30,0,0,0"/>
+
+            </FlexLayout>
+
+
+            <!-- ScaleX = cambia el ancho-->
+            <!-- ScaleY = cambia el altura-->
+            <HorizontalStackLayout>
+                <Switch IsToggled="True" 
+                  Margin="65,40,0,0"
+                  ScaleX="2.0" 
+                  ScaleY="2.0"/>
+
+                <Label Text="00:30"
+                 TextColor="Black"
+                 FontAttributes="Bold"
+                 FontSize="35"
+                 Margin="132,40,0,0"/>
+
+            </HorizontalStackLayout>
+
+
+            <FlexLayout Margin="23,130,0,0">
+
+                <Label Text="Litros de agua: 14"
+                 FontSize="19"
+                 FontAttributes="Bold"/>
+
+                <Label Text="Estado: Casi lleno"
+                 FontSize="19"
+                 FontAttributes="Bold"
+                 Margin="15,0,0,0"/>
+
+            </FlexLayout>
+
+            <!-- IMAGEN DE UNA GRAFICA DE PASTEL. -->
+
+            <VerticalStackLayout HorizontalOptions="Center">
+
+                <Image Source="grafica.png" 
+                     WidthRequest="300"
+                     HeightRequest="300"
+                     Aspect="AspectFit"
+                     Margin="0,40,0,0"/>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

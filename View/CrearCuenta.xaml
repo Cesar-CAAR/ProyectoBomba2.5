@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoBomba.View.CrearCuenta"
+             Title="Crear Cuenta"
+             BackgroundImageSource="principal_movil">
+    
+    <ContentPage.Content>
+        <Grid Padding="20">
+            <VerticalStackLayout Spacing="20"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="CenterAndExpand">
+                <!-- Tarjeta con fondo semi-transparente -->
+                <Frame BackgroundColor="White"
+                         CornerRadius="20"
+                         Padding="20"
+                      WidthRequest="300"
+                           Opacity="0.9">
+                    <VerticalStackLayout Spacing="10">
+                        <!-- Campo Nombre de Usuario -->
+                        <Label Text="Nombre de Usuario"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               TextColor="Black"/>
+                        <Entry Placeholder="Ingresa tu nombre de usuario"
+                               Text="{Binding Usuario, Mode=TwoWay}"
+                               FontSize="16"
+                               BackgroundColor="Transparent"
+                               TextColor="Black"/>
+
+                        <!-- Campo Correo -->
+                        <Label Text="Correo"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               TextColor="Black"/>
+                        <Entry Placeholder="Ingresa tu correo"
+                               Text="{Binding Correo, Mode=TwoWay}"
+                               FontSize="16"
+                               BackgroundColor="Transparent"
+                               TextColor="Black"/>
+
+                        <!-- Campo Contraseña -->
+                        <Label Text="Contraseña"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               TextColor="Black"/>
+                        <Entry Placeholder="Ingresa tu contraseña"
+                               Text="{Binding Contraseña, Mode=TwoWay}"
+                               FontSize="16"
+                               IsPassword="True"
+                               BackgroundColor="Transparent"
+                               TextColor="Black"/>
+
+                        <!-- Botón Crear Cuenta -->
+                        <Button Text="Crear cuenta"
+                                BackgroundColor="Green"
+                                TextColor="White"
+                                FontSize="16"
+                                Command="{Binding CrearCuentaCommand}"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

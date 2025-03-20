@@ -1,0 +1,73 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoBomba.View.Historial"
+             Title="Historial"
+             xmlns:viewModel="clr-namespace:ProyectoBomba.ViewModel">
+
+    <!-- Asignar el ViewModel -->
+    <ContentPage.BindingContext>
+        <viewModel:HistorialViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <VerticalStackLayout
+            BackgroundColor="#18A4D0">
+            <!-- Título -->
+            <Label Text="Historial"
+                FontSize="30"
+                Margin="0,15,0,50"
+                FontAttributes="Bold"
+                TextColor="Black"
+                HorizontalTextAlignment="Center"/>
+
+            <!-- Tabla de Historial -->
+            <ListView ItemsSource="{Binding HistorialData}" Margin="30,0,20,0">
+                <ListView.Header>
+                    <Grid>
+                        <!-- Espaciado inferior agregado -->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Día" 
+                            FontAttributes="Bold" 
+                            Grid.Column="0" 
+                            HorizontalOptions="Center"/>
+                        <Label Text="Litros" 
+                            FontAttributes="Bold" 
+                            Grid.Column="1" 
+                            HorizontalOptions="Center"/>
+                        <Label Text="Tiempo" 
+                            FontAttributes="Bold" 
+                            Grid.Column="2" 
+                            HorizontalOptions="Center"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <ViewCell >
+                            <Grid BackgroundColor="#18A4D0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Dia}" 
+                                    Grid.Column="0" 
+                                    VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding Litros}" 
+                                    Grid.Column="1" 
+                                    VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding Tiempo}" 
+                                    Grid.Column="2" 
+                                    VerticalTextAlignment="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

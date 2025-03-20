@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoBomba.View.Login"
+             BackgroundImageSource="principal_movil">
+    <ContentPage.Content>
+        <Grid Padding="20">
+            <VerticalStackLayout Spacing="20"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="CenterAndExpand">
+                <!-- Tarjeta con fondo semi-transparente -->
+                <Frame BackgroundColor="White"
+                       CornerRadius="20"
+                       Padding="20"
+                       WidthRequest="300"
+                       Opacity="0.9">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Correo"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               TextColor="Black"/>
+                        <Entry Placeholder="Ingresa tu correo"
+                               Text="{Binding Usuario, Mode=TwoWay}"
+                               FontSize="16"
+                               BackgroundColor="Transparent"
+                               TextColor="Black"/>
+                        <Label Text="Contraseña"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               TextColor="Black"/>
+                        <Entry Placeholder="Ingresa tu contraseña"
+                               Text="{Binding Contrasena, Mode=TwoWay}"
+                               FontSize="16"
+                               IsPassword="True"
+                               BackgroundColor="Transparent"
+                               TextColor="Black"/>
+                        <!-- Enlace de recuperar contraseña -->
+                        <Label Text="Recuperar contraseña"
+                               FontSize="14"
+                               TextColor="Blue"
+                               HorizontalOptions="End">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding RecuperarContrasenaCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <!-- Botón Iniciar Sesión -->
+                        <Button Text="Iniciar Sesión"
+                                CornerRadius="10"
+                                BackgroundColor="#007AFF"
+                                TextColor="White"
+                                FontSize="16"
+                                Command="{Binding LoginCommand}"/>
+                        <!-- Línea de separación -->
+                        <BoxView HeightRequest="1"
+                                 BackgroundColor="White"
+                                 Opacity="0.5"/>
+                        <!-- Botón Crear Cuenta -->
+                        <Button Text="Crear cuenta"
+                                BackgroundColor="Green"
+                                TextColor="White"
+                                FontSize="16"
+                                Command="{Binding CrearCuentaCommand}"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
