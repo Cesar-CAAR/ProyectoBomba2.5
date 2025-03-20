@@ -6,8 +6,8 @@
     FlyoutBehavior="Flyout"
     Title="ProyectoBomba"
     FlyoutBackgroundColor="#cdeef7"
-    FlyoutWidth="230">
-    <!-- Ajusta el ancho del menú lateral -->
+    FlyoutWidth="230"
+    Shell.NavBarIsVisible="False">
 
     <!-- Encabezado del menú lateral -->
     <Shell.FlyoutHeader>
@@ -33,21 +33,22 @@
         </StackLayout>
     </Shell.FlyoutHeader>
 
-    <!-- Menú lateral con las páginas principales -->
-    <FlyoutItem Title="Inicio" Route="Inicio">
+    <!-- Menú lateral con iconos -->
+    <FlyoutItem Title="Inicio" Route="Inicio" FlyoutIcon="inicio.png">
         <ShellContent ContentTemplate="{DataTemplate local:Inicio}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Historial" Route="Historial">
+    <FlyoutItem Title="Historial" Route="Historial" FlyoutIcon="historial.png">
         <ShellContent ContentTemplate="{DataTemplate local:Historial}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Alarma" Route="Alarma">
+    <FlyoutItem Title="Alarma" Route="Alarma" FlyoutIcon="alarma.png">
         <ShellContent ContentTemplate="{DataTemplate local:Alarma}" />
     </FlyoutItem>
 
-    <!-- Botón para cerrar sesión -->
+    <!-- Botón para cerrar sesión con icono -->
+    
     <MenuItem Text="Cerrar Sesión"
-              Clicked="OnCerrarSesion"
-              IconImageSource="logout.png"/>
+              Clicked="OnCerrarSesion"/>
+    
 </Shell>

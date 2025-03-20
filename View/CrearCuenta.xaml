@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoBomba.View.CrearCuenta"
              Title="Crear Cuenta"
-             BackgroundImageSource="principal_movil">
+             BackgroundImageSource="principal_movil"
+             NavigationPage.HasNavigationBar="False">
     
     <ContentPage.Content>
         <Grid Padding="20">
